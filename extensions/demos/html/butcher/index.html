@@ -1,74 +1,530 @@
-<!--
-    Copyright (c) 2006-2026 Wade Alcorn - wade@bindshell.net
-    Browser Exploitation Framework (BeEF) - https://beefproject.com
-    See the file 'doc/COPYING' for copying permission
--->
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>The Butcher</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarnHub - Make Money Online</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	<link rel="stylesheet" type="text/css" href="butch.css" />
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideInDown 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #ffed4e;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #667eea;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .features {
+            background: #f8f9fa;
+        }
+
+        .stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .methods {
+            background: white;
+        }
+
+        .method-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .method-list li {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .method-list li:hover {
+            background: #e9ecef;
+            padding-left: 2rem;
+        }
+
+        .method-list strong {
+            color: #667eea;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .testimonials {
+            background: #f8f9fa;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<script src="jquery-1.12.4.min.js"></script>
-<script>
+    <!-- Header/Navigation -->
+    <header>
+        <nav>
+            <div class="logo">💰 EarnHub</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#methods">Methods</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-	function showfriends() {
-		$("#hamper").hide();
-		$("#friends").show();
-	}
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Start Earning Money Today! 🚀</h1>
+            <p>Discover multiple ways to make passive and active income online. Join thousands of successful earners!</p>
+            <button class="cta-button" onclick="alert('Welcome! Sign up form coming soon!')">Get Started Now</button>
+        </div>
+    </section>
 
-	function showHamper() {
-		$("#friends").hide();
-		$("#hamper").show();
-	}
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose EarnHub?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Easy to Start</h3>
+                    <p>No experience needed. Our beginner-friendly guide will help you get started in minutes!</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <h3>Proven Methods</h3>
+                    <p>Real strategies used by successful online earners across the globe.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Track Progress</h3>
+                    <p>Monitor your earnings with our advanced dashboard and analytics tools.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔒</div>
+                    <h3>100% Secure</h3>
+                    <p>Your data is protected with industry-leading security measures.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌍</div>
+                    <h3>Global Community</h3>
+                    <p>Join a community of 100,000+ earners from around the world.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💬</div>
+                    <h3>24/7 Support</h3>
+                    <p>Our expert team is always ready to help you succeed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</script>
-<script src="/hook.js"></script>
-<div id="content">
-	<!-- Awesome Beef Images from: http://www.flickr.com/photos/bulle_de/4657658048/ and http://www.flickr.com/photos/dinesarasota/3944042189/ -->
-	<div id="logo">
-		<img src="top.jpg" alt="The Butcher" />
-	</div>
-	<div id="stuff">
-		<div class="bigger">
-Welcome to The Butcher, your source of delicious meats. Please feel free to view our samples, sign up to our mailing-list or purchase our special BeEF-hamper!
-		</div>
-		<div class="normal">
-			<button type="button" onclick="showfriends();">Our Meaty Friends</button> &nbsp; <button type="button" onclick="showHamper();">Order Your BeEF-Hamper</button>
-			<div id="friends">
-				<ul>
-				<li><a href="https://beefproject.com" target="_blank">The Browser Exploitation Framework Project homepage</a>
-				<li><a href="https://github.com/beefproject/beef/wiki" target="_blank">BeEF Wiki</a></li>
-				<li><a href="http://browserhacker.com/" target="_blank">Browser Hacker's Handbook</a></li>
-				<li><a href="https://slashdot.org/" target="_blank">Slashdot</a>
-				</ul>
-			</div>
-			<div id="hamper">
-				<p>Delicious delicious hamper, straight to your door!</p>
-				<form method="GET" action="index.html">
-					Name: <input type="text" name="yourname" /><br />
-					Phone: <input type="text" name="phone" /><br />
-					Address: <input type="text" name="address" /><br />
-					Credit Card: <input type="text" name="creditcard" /><br />
-					<input type="submit" value="Buy buy!" />
-				</form>
-				<p>Sign up to our mailing list for delicious meats delivered straight to your inbox!</p>
-				<form method="GET" action="index.html">
-				E-mail: <input type="text" name="yourname" /><br />
-				Password: <input type="password" name="password" /><br />
-				<input type="submit" value="Sign Up!">
-				</form>
-			</div>
-		</div>
-		<div class="smaller">
-			Thanks to http://www.flickr.com/photos/bulle_de/ and http://dineSarasota.com for the BeEF images
-		</div>
-	</div>
-</div>
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Our Success Story</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h4>100K+</h4>
+                    <p>Active Members</p>
+                </div>
+                <div class="stat-item">
+                    <h4>$50M+</h4>
+                    <p>Paid Out</p>
+                </div>
+                <div class="stat-item">
+                    <h4>150+</h4>
+                    <p>Countries</p>
+                </div>
+                <div class="stat-item">
+                    <h4>4.9/5</h4>
+                    <p>Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methods Section -->
+    <section class="methods" id="methods">
+        <div class="container">
+            <h2 class="section-title">Popular Earning Methods</h2>
+            <ul class="method-list">
+                <li>
+                    <strong>📝 Freelancing</strong>
+                    <p>Offer your skills on platforms like Fiverr and Upwork. Earn $50-$500+ per project.</p>
+                </li>
+                <li>
+                    <strong>🎓 Online Teaching</strong>
+                    <p>Teach languages or subjects online. Earn $15-$50 per hour.</p>
+                </li>
+                <li>
+                    <strong>✍️ Content Writing</strong>
+                    <p>Write blogs and articles. Earn $50-$200 per article.</p>
+                </li>
+                <li>
+                    <strong>🎵 Digital Products</strong>
+                    <p>Sell courses, templates, and designs. Passive income potential!</p>
+                </li>
+                <li>
+                    <strong>📱 Affiliate Marketing</strong>
+                    <p>Promote products and earn commissions. Unlimited earning potential!</p>
+                </li>
+                <li>
+                    <strong>🎮 Gaming & Streaming</strong>
+                    <p>Stream on Twitch or YouTube. Earn through ads, sponsorships, and donations.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Members Say</h2>
+            <div class="cards-grid">
+                <div class="testimonial-card">
+                    <p>"I started with EarnHub and made my first $1000 in just 3 months! Highly recommended!"</p>
+                    <p class="testimonial-author">- Sarah M., USA</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The methods are simple and effective. I'm now earning a full-time income part-time!"</p>
+                    <p class="testimonial-author">- Ahmed K., Egypt</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Best investment in my future. The support team is amazing and always helpful."</p>
+                    <p class="testimonial-author">- Lisa P., UK</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Ready to Start Earning?</h2>
+            <div style="text-align: center; max-width: 500px; margin: 0 auto;">
+                <p style="margin-bottom: 2rem; font-size: 1.1rem; color: #666;">
+                    Join our community today and start your earning journey!
+                </p>
+                <button class="cta-button" onclick="alert('Sign up form will be added here!')">Sign Up Free</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>EarnHub is your trusted platform for learning and earning money online.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#methods">Methods</a></li>
+                    <li><a href="#stats">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@earnhub.com">Email: info@earnhub.com</a></li>
+                    <li><a href="tel:+1234567890">Phone: +1 (234) 567-890</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr style="border: none; border-top: 1px solid #555; margin-bottom: 1rem;">
+        <p>&copy; 2026 EarnHub. All rights reserved. | Helping you earn money online</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation to cards
+        const cards = document.querySelectorAll('.card');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
